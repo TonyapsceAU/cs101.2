@@ -27,10 +27,10 @@ int main () {
     FILE* fp;
 
     int N;
-    printf("歡迎光臨長庚樂透彩購買機台\n請問寧要買幾組樂透彩 : ");
+    printf("歡迎光臨長庚樂透彩購買機台\n請問要買幾組樂透彩 : ");
     scanf("%d",&N);
     int ant = N;
-    printf("以為您購買的 %d 組樂透組合輸出至 lotto.txt\n",ant);
+    printf("已把您購買的 %d 組樂透組合輸出至 lotto.txt\n",ant);
 
     fp = fopen("lotto.txt","w+");
     fprintf(fp,"%s", ctime(&Time));
