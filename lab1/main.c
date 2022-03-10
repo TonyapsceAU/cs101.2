@@ -88,17 +88,17 @@ int main () {
     
     int ID_record_Fail = 0;
     FILE* fp3;
-    if((fp3 = fopen("ID_record.txt","rb")) == NULL){
+    if((fp3 = fopen("ID_record.bin","rb")) == NULL){
         ID_record_Fail = 1;
     }
     // printf("ID_record_Fail = %d",ID_record_Fail);
     // printf("%s",No_count);
     if(ID_record_Fail){
-        fp3 = fopen("ID_record.txt","wb+");
+        fp3 = fopen("ID_record.bin","wb+");
         fprintf(fp3,"%s : %d \n",No_count,op_id);
         fclose(fp3);
     }else{
-        fp3 = fopen("ID_record.txt","a");
+        fp3 = fopen("ID_record.bin","a");
         fprintf(fp3,"%s : %d \n",No_count,op_id);
         fclose(fp3);
     }
