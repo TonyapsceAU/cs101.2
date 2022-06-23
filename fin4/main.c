@@ -15,31 +15,31 @@ class freqFile {
             filename = name;
         }
         
-    void readFile() {
-        ifstream read;
-        read.open(filename);
-        
-        while (!read.eof()) {
-            read.get(check);
-            if (check >= 'A' && check <= 'Z')
-                check = check + ('a' - 'A');
-            if (check >= 'a' && check <= 'z')
-                alphfreq[check-'a']++;
+        void readFile() {
+            ifstream read;
+            read.open(filename);
+
+            while (!read.eof()) {
+                read.get(check);
+                if (check >= 'A' && check <= 'Z')
+                    check = check + ('a' - 'A');
+                if (check >= 'a' && check <= 'z')
+                    alphfreq[check-'a']++;
+            }
+
+            read.close();
         }
-        
-        read.close();
-    }
-    
-    void showFreq() {
-        check = 'a';
-        
-        for (int i = 0; i < 26; i++) {
-            cout << '[' << check << "] = " << alphfreq[i] << endl;
-            check++;
+
+        void showFreq() {
+            check = 'a';
+
+            for (int i = 0; i < 26; i++) {
+                cout << '[' << check << "] = " << alphfreq[i] << endl;
+                check++;
+            }
+
+            check = '\0';
         }
-        
-        check = '\0';
-    }
     
 };
 
